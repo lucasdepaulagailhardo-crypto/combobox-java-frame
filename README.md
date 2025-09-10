@@ -1,11 +1,10 @@
-**combobox-java-frame-nebeans**
-
+# **combobox-java-frame-nebeans**
 Código em java, ambientado em NetBeans descrevendo alguns dos funcionamentos da caixa de combinação
 
-Detalhas sobre a combobox:
+## **Detalhas sobre a combobox:**
 Em Java, um componente JComboBox (caixa de combinação) é um elemento gráfico de interface do utilizador (GUI) da biblioteca Swing que combina um campo de texto editável e uma lista suspensa para que o utilizador possa selecionar um item de uma lista ou inserir um valor personalizado. 
 
-**Tabela jcombobox:**
+## **Tabela jcombobox:**
 
 | **Categoria**            | **Método**                             | **Descrição**                                        | **Exemplo de uso**                                                                                                     |
 | ------------------------ | -------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
