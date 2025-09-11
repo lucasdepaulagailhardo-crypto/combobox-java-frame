@@ -4,15 +4,21 @@
  */
 package combobox.java.frame;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Documentos
  */
 public class comboboxFrame extends javax.swing.JFrame {
-
     /**
      * Creates new form comboboxFrame
      */
+    
+    /*  Componente JComboBox (caixa de combinação), Biblioteca Swing, interface gráfica,
+    *   combina um campo de texto editável [JComboBox.setEditable(True)] e uma lista suspensa para 
+    *   que o utilizador possa selecionar um item de uma lista ou inserir um valor personalizado.
+    */ 
     public comboboxFrame() {
         initComponents();
     }
@@ -26,13 +32,17 @@ public class comboboxFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         bntNova = new javax.swing.JButton();
         txtNova = new javax.swing.JTextField();
         cbCores = new javax.swing.JComboBox<>();
         bntRemover = new javax.swing.JButton();
         txtResultado = new javax.swing.JLabel();
-        bntConfirmar = new javax.swing.JButton();
+        bntExibir = new javax.swing.JButton();
+        bntEditableCbCores = new javax.swing.JButton();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,10 +67,17 @@ public class comboboxFrame extends javax.swing.JFrame {
         txtResultado.setText("Resultado");
         txtResultado.setToolTipText("");
 
-        bntConfirmar.setText("Exibir");
-        bntConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        bntExibir.setText("Exibir");
+        bntExibir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntConfirmarActionPerformed(evt);
+                bntExibirActionPerformed(evt);
+            }
+        });
+
+        bntEditableCbCores.setText("Editable");
+        bntEditableCbCores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntEditableCbCoresActionPerformed(evt);
             }
         });
 
@@ -83,9 +100,11 @@ public class comboboxFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(bntRemover)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                                .addComponent(bntConfirmar))
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bntExibir))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(cbCores, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bntEditableCbCores)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtResultado)
                                 .addGap(11, 11, 11)))))
@@ -99,14 +118,15 @@ public class comboboxFrame extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbCores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtResultado))
-                .addGap(41, 41, 41)
+                    .addComponent(txtResultado)
+                    .addComponent(bntEditableCbCores))
+                .addGap(40, 40, 40)
                 .addComponent(txtNova, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntNova)
                     .addComponent(bntRemover)
-                    .addComponent(bntConfirmar))
+                    .addComponent(bntExibir))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -115,25 +135,36 @@ public class comboboxFrame extends javax.swing.JFrame {
 
     private void bntNovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntNovaActionPerformed
         // TODO add your handling code here:
-        //Adiciona um novo item à comboBox a partir do texto do labelField
-        cbCores.addItem(txtNova.getText());
+        
+        if (!txtNova.getText().isEmpty())
+        cbCores.addItem(txtNova.getText());//Adiciona um novo item à comboBox a partir do texto do labelField (txtNova)
+        //Não é necessário converter txtNova para String, pois estamos pegando o própria String do getText
+        
+        else JOptionPane.showMessageDialog(null, "Não há texto");
+        
+        txtNova.setText("");//Limpa a caixa de texto
     }//GEN-LAST:event_bntNovaActionPerformed
 
     private void bntRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRemoverActionPerformed
         // TODO add your handling code here:
 
-        //Remove a partir o item a partir da posição index (lista), inicia na posição 0
-        //cbCores.removeItemAt(int index);
-
-        //Remove o item selecionado atual da ComoBox
-        cbCores.removeItem(cbCores.getSelectedItem());
+        //Remove o item a partir da posição index (lista), inicia na posição 0
+        //cbCores.removeItemAt(int index); /*comando exemplo*/
+       
+        cbCores.removeItem(cbCores.getSelectedItem());//Remove o item selecionado atual da ComoBox (index = 0)
     }//GEN-LAST:event_bntRemoverActionPerformed
 
-    private void bntConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntConfirmarActionPerformed
+    private void bntExibirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntExibirActionPerformed
         // TODO add your handling code here:
-        //Seta o texto do item atual da ComoBox no label Resultado
-        txtResultado.setText(cbCores.getSelectedItem().toString());
-    }//GEN-LAST:event_bntConfirmarActionPerformed
+        
+        txtResultado.setText(cbCores.getSelectedItem().toString());//Set o texto do item atual (index = 0) da ComoBox no label Resultado
+        //Os itens da jcombobox são definidos como objetos, logo modificamos para toString()
+    }//GEN-LAST:event_bntExibirActionPerformed
+
+    private void bntEditableCbCoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEditableCbCoresActionPerformed
+        // TODO add your handling code here:
+        cbCores.setEditable(true);//Habilita edição de texto da ComboBox
+    }//GEN-LAST:event_bntEditableCbCoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,11 +202,13 @@ public class comboboxFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntConfirmar;
+    private javax.swing.JButton bntEditableCbCores;
+    private javax.swing.JButton bntExibir;
     private javax.swing.JButton bntNova;
     private javax.swing.JButton bntRemover;
     private javax.swing.JComboBox<String> cbCores;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtNova;
     private javax.swing.JLabel txtResultado;
     // End of variables declaration//GEN-END:variables

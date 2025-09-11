@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -40,10 +47,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="bntRemover" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="83" max="32767" attributes="0"/>
-                              <Component id="bntConfirmar" min="-2" max="-2" attributes="0"/>
+                              <Component id="bntExibir" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="cbCores" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="bntEditableCbCores" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="txtResultado" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
@@ -64,14 +73,15 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cbCores" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtResultado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bntEditableCbCores" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="txtNova" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bntNova" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bntRemover" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bntConfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bntExibir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="125" max="32767" attributes="0"/>
           </Group>
@@ -123,12 +133,20 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="bntConfirmar">
+    <Component class="javax.swing.JButton" name="bntExibir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exibir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntConfirmarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntExibirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntEditableCbCores">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editable"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEditableCbCoresActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
