@@ -45,13 +45,7 @@ public class comboboxFrame extends javax.swing.JFrame {
             }
         });
 
-        cbCores.setMaximumRowCount(30);
         cbCores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Vermelho", "Verde", "Paris" }));
-        cbCores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCoresActionPerformed(evt);
-            }
-        });
 
         bntRemover.setText("Remover");
         bntRemover.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +57,7 @@ public class comboboxFrame extends javax.swing.JFrame {
         txtResultado.setText("Resultado");
         txtResultado.setToolTipText("");
 
-        bntConfirmar.setText("Confirmar");
+        bntConfirmar.setText("Exibir");
         bntConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntConfirmarActionPerformed(evt);
@@ -88,12 +82,13 @@ public class comboboxFrame extends javax.swing.JFrame {
                                     .addComponent(txtNova, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(bntRemover)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                                 .addComponent(bntConfirmar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cbCores, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtResultado)))))
+                                .addComponent(txtResultado)
+                                .addGap(11, 11, 11)))))
                 .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
@@ -123,28 +118,6 @@ public class comboboxFrame extends javax.swing.JFrame {
         //Adiciona um novo item à comboBox a partir do texto do labelField
         cbCores.addItem(txtNova.getText());
     }//GEN-LAST:event_bntNovaActionPerformed
-
-    private void cbCoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCoresActionPerformed
-        // TODO add your handling code here:
-        /*String corSelecionada = cbCores.getSelectedItem().toString();
-
-        if (corSelecionada.equals("Azul")) {
-            cbCores.setBackground(Color.BLUE);
-            cbCores.setForeground(Color.BLACK);
-        } else if (corSelecionada.equals("Vermelho")) {
-            cbCores.setBackground(Color.RED);
-            cbCores.setForeground(Color.WHITE);
-        } else if (corSelecionada.equals("Verde")) {
-            cbCores.setBackground(Color.GREEN);
-            cbCores.setForeground(Color.BLACK);
-        } else if (corSelecionada.equals("Branco")){
-            cbCores.setBackground(Color.WHITE);
-            cbCores.setForeground(Color.BLACK);
-        } else{
-            cbCores.setBackground(Color.GRAY);
-            cbCores.setForeground(Color.BLACK);
-        }*/
-    }//GEN-LAST:event_cbCoresActionPerformed
 
     private void bntRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRemoverActionPerformed
         // TODO add your handling code here:
