@@ -45,6 +45,7 @@ public class comboboxFrame extends javax.swing.JFrame {
             }
         });
 
+        cbCores.setMaximumRowCount(30);
         cbCores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Vermelho", "Verde", "Paris" }));
         cbCores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
