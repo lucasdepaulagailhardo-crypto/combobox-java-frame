@@ -18,6 +18,8 @@ public class comboboxFrame extends javax.swing.JFrame {
     /*  Componente JComboBox (caixa de combinação), Biblioteca Swing, interface gráfica,
     *   combina um campo de texto editável [JComboBox.setEditable(True)] e uma lista suspensa para 
     *   que o utilizador possa selecionar um item de uma lista ou inserir um valor personalizado.
+    *
+    *   saiba mais sober os principais métodos da jcombobox em: https://github.com/lucasdepaulagailhardo-crypto/combobox-java-frame
     */ 
     public comboboxFrame() {
         initComponents();
